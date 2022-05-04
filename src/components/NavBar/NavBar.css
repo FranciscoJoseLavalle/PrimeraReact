@@ -11,10 +11,16 @@
     transform: scale(1.1);
 }
 .header {
-    background-image: url(../../../img/fondo.jpeg);
+    background-image: url(../../assets/images/fondo.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.header__nav-cartul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 .header__nav {
     display: flex;
