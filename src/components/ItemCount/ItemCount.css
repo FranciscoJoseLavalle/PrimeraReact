@@ -1,0 +1,54 @@
+.contenedor {
+    border: solid #ddd .15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    width: 20rem;
+    border-radius: .5rem;
+    margin: auto;
+    box-shadow: #666 1px 1px 15px 1px;
+    padding: 2rem;
+}
+.nombre {
+    color: #555;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+}
+.contenedorContador {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: solid #ddd .15rem;
+    margin: auto;
+    width: 100%;
+    border-radius: .3rem;
+    height: 2.5rem;
+}
+.contenedorContador button {
+    background-color: transparent;
+    border: none;
+    font-size: 2.75rem;
+    cursor: pointer;
+    padding: 0 .5rem;
+    color: #49f
+}
+.contenedorContador button:hover {
+    color: #6bf;
+}
+.agregar {
+    padding: .7rem;
+    background-color: transparent;
+    border:solid .15rem #49f;
+    border-radius: .3rem;
+    width: 100%;
+    color: #49f;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.agregar:hover {
+    color: #6bf;
+    border-color: #6bf;
+}
