@@ -3,7 +3,7 @@ import './CartWidget.css';
 
 function CartWidget() {
     return(
-        <img src={Cart} alt="Carrito" />
+        <img className='carritoImg' src={Cart} alt="Carrito" />
     )
 }
 export default CartWidget;
