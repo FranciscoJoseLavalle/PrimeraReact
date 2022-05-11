@@ -11,8 +11,8 @@ let productosArr = [
     { nombre: 'Limpiador de lengua', id: '3', precio: '670', imagen: 'https://m.media-amazon.com/images/I/6173l0Gm2kL._SX522_.jpg' },
     { nombre: 'Vitamina B12 Natier', id: '4', precio: '1740', imagen: 'http://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/363/products/b121-585b63ed3a420e877615909505304071-640-0.jpg' },
     { nombre: 'Spirulina en polvo', id: '5', precio: '690', imagen: 'https://www.almacencamposverdes.com.ar/wp-content/uploads/2019/08/spirulina-en-polvo.jpg' },
-    { nombre: 'Mat de Yoga6', id: '6', precio: '1400', imagen: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/966/664/products/fb15rosa11-e841c85fef47c111ab16058932419549-1024-1024.jpg' },
-    { nombre: 'Mat de Yoga7', id: '7', precio: '1400', imagen: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/966/664/products/fb15rosa11-e841c85fef47c111ab16058932419549-1024-1024.jpg' }
+    { nombre: 'Pelota', id: '6', precio: '620', imagen: 'https://m.media-amazon.com/images/I/61pxb9poQnL._AC_SX425_.jpg' },
+    { nombre: 'Banco de Yoga', id: '7', precio: '12400', imagen: 'https://m.media-amazon.com/images/I/71V-J7lB3FL._AC_SX425_.jpg' }
 ];
 
 const tomarProductos = new Promise((resolve) => {
