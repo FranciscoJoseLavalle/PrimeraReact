@@ -1,6 +1,5 @@
 import Item from "../Item/Item";
 
-
 function ItemList(productosArr) {
 
     let productos = productosArr.children;

@@ -4,17 +4,18 @@
     justify-content: center;
     gap: .5rem;
     margin: .5rem;
+    padding-bottom: 5rem;
 }
 .producto {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    border: solid #888 .12rem;
     border-radius: .3rem;
     transition: transform .2s;
     background-color: #fff;
     box-shadow: #666 0 0 6px 0;
+    width: 20rem;
 }
 .producto:hover {
     transform: scale(1.02);
@@ -24,11 +25,10 @@
 }
 .imgCont {
     height: 10rem;
-    width: 20rem;
+    width: 100%;
     margin: auto;
 }
 .producto img {
-    min-width: 8rem;
     height: 100%;
     object-fit: contain;
     overflow: hidden;
@@ -53,13 +53,41 @@
     background-color: #986;
 }
 
-@media (max-width: 695px) {
+@media (max-width: 690px) {
+    .producto {
+        width: 12rem;
+        height: 27rem;
+    }
     .imgCont {
-        width: min-content;
+        height: 5rem;
     }
 }
-@media (max-width: 358px) {
+@media (max-width: 609px) {
+    .producto {
+        width: 15rem;
+    }
     .imgCont {
-        width: 18rem;
+        height: 7rem;
+    }
+}
+@media (max-width: 510px) {
+    .producto {
+        width: 12rem;
+    }
+    .imgCont {
+        height: 5rem;
+    }
+}
+@media (max-width: 411px) {
+    .producto {
+        width: 10rem;
+    }
+}
+@media (max-width: 343px) {
+    .producto {
+        width: 17rem;
+    }
+    .imgCont {
+        height: 8rem;
     }
 }

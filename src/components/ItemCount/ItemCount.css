@@ -53,3 +53,13 @@
     color: #fff;
     background-color: #875;
 }
+@media (max-width: 411px) {
+    .contenedor {
+        padding: 0;
+    }
+}
+@media (max-width: 343px) {
+    .contenedor {
+        padding: 2rem;
+    }
+}
