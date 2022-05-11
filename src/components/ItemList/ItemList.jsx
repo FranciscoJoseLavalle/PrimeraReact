@@ -7,7 +7,7 @@ function ItemList(productosArr) {
 
     return (
         <div className="catalogo">
-            {productos.map(producto => <Item>{producto}</Item>)}
+            {productos.map(producto => (<Item>{producto}</Item>))}
         </div>
     )
 }

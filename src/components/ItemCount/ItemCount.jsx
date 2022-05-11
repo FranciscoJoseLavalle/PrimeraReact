@@ -21,7 +21,11 @@ function ItemCount(prod) {
     // Agregar
     function onAdd() {
         console.log(count);
-        alert(`Agregaste ${count} ${prod.children.nombre}`)
+        if (count === 1) {
+            alert(`Agregaste ${count} ${prod.children.nombre}`)
+        } else {
+            alert(`Agregaste ${count} ${prod.children.nombrePlural}`)
+        }
     }
     return(
         <div className='contenedor'>
