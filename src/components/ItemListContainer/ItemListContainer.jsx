@@ -32,8 +32,6 @@ function ItemListContainer() {
         .finally(() => setLoading(false))
     },[])
 
-    console.log(productos)
-
     return (
         <>
             <h2>Nuestro catálogo</h2>

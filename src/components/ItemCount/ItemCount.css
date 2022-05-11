@@ -6,9 +6,9 @@
     gap: .3rem;
     width: 100%;
     border-radius: .5rem;
-    margin: auto;
     box-shadow: #777 1px 1px 15px 1px;
     padding: 2rem;
+    background-color: #fff;
 }
 .nombre {
     color: #555;
