@@ -3,10 +3,12 @@ import Item from "../Item/Item";
 
 function ItemList(productosArr) {
 
+    let productos = productosArr.children;
+
     return (
-        <>
-            <Item>{productosArr}</Item>
-        </>
+        <div className="catalogo">
+            {productos.map(producto => <Item>{producto}</Item>)}
+        </div>
     )
 }
 

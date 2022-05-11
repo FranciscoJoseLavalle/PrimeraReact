@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: space-between;
     text-align: center;
-    border: solid #777 .12rem;
+    border: solid #888 .12rem;
     border-radius: .3rem;
     transition: transform .2s;
     background-color: #fff;
@@ -23,25 +23,43 @@
     padding: .3rem;
 }
 .imgCont {
-    min-height: 10rem;
+    height: 10rem;
+    width: 20rem;
+    margin: auto;
 }
 .producto img {
-    max-width: 20vw;
     min-width: 8rem;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     overflow: hidden;
     object-position: center;
 }
-.producto button {
-    padding: .35rem;
-    height: 2.5rem;
+.btn {
     width: 100%;
+    cursor: pointer;
+}
+.btnDetalles {
+    height: 2.5rem;
+    background-color: #875;
     border: none;
     color: #fff;
-    background-color: #875;
     border-bottom-left-radius: .2rem;
     border-bottom-right-radius: .2rem;
     font-size: .95rem;
-    cursor: pointer;
+    padding: .35rem;
+    transition: background-color .2s;
+}
+.btnDetalles:hover {
+    background-color: #986;
+}
+
+@media (max-width: 695px) {
+    .imgCont {
+        width: min-content;
+    }
+}
+@media (max-width: 358px) {
+    .imgCont {
+        width: 18rem;
+    }
 }

@@ -1,23 +1,27 @@
+import ItemCount from '../ItemCount/ItemCount';
 import './Item.css';
 
-function Item(productosArr) {
+function Item(producto) {
 
-    let productos = productosArr.children.children;
+    let prod = producto.children;
+
+    function detail(prod) {
+        console.log(prod)
+    }
 
     return (
-        <div className="catalogo">
-            {productos.map(producto => (
-                <div key={producto.id} className="producto">
-                    <div className='imgCont'>
-                    <img src={producto.imagen} alt="Imagen del producto" />
-                    </div>
-                    <div className='producto__informacion'>
-                        <h4>{producto.nombre}</h4>
-                        <p>${producto.precio}</p>
-                    </div>
-                    <button>Ver más detalles</button>
+        <div>
+            <div key={prod.id} className="producto">
+                <div className='imgCont'>
+                    <img src={prod.imagen} alt="Imagen del producto" />
                 </div>
-            ))}
+                <div className='producto__informacion'>
+                    <h4>{prod.nombre}</h4>
+                    <p>${prod.precio}</p>
+                    <ItemCount>{prod}</ItemCount>
+                </div>
+                <button className="btnDetalles btn" onClick={(() => detail(prod))}>Ver más detalles</button>
+            </div>
         </div>
     )
 }

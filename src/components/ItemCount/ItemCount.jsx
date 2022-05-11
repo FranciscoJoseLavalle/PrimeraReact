@@ -1,19 +1,19 @@
 import './ItemCount.css';
 import React, { useState } from 'react';
 
-function ItemCount({stock, initial}) {
-    const [count, setCount] = useState(parseFloat(initial));
+function ItemCount(prod) {
+    const [count, setCount] = useState(parseFloat(1));
 
     // Sumar
     function sumar() {
-        if(count < stock) {
+        if(count < prod.children.cantidad) {
             setCount(count + 1);
         }
     }
     
     // Restar
     function restar() {
-        if(count <= stock && count > initial) {
+        if(count <= prod.children.cantidad && count > 1) {
             setCount(count - 1);
         }
     }
@@ -21,16 +21,16 @@ function ItemCount({stock, initial}) {
     // Agregar
     function onAdd() {
         console.log(count);
+        alert(`Agregaste ${count} ${prod.children.nombre}`)
     }
     return(
         <div className='contenedor'>
-            <p className='nombre'>Mat de Yoga</p>
             <div className='contenedorContador'>
                 <button onClick={restar}>-</button>
                 <p>{count}</p>
                 <button onClick={sumar}>+</button>
             </div>
-            <button className='agregar' onClick={onAdd}>Agregar al carrito</button>
+            <button className='agregar btn' onClick={onAdd}>Agregar al carrito</button>
         </div>
     )
 }
