@@ -22,7 +22,7 @@ const tomarProductos = new Promise((resolve) => {
     }, 2000)
 })
 
-function ItemListContainer() {
+function ItemListContainer(mostrarItem) {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
 
@@ -35,7 +35,7 @@ function ItemListContainer() {
     return (
         <>
             <h2>Nuestro catálogo</h2>
-            { loading ? <Loader /> : <ItemList>{productosArr}</ItemList>}
+            { loading ? <Loader /> : <ItemList>{productosArr}</ItemList> }
         </>
     )
 }

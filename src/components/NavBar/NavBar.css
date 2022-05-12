@@ -38,13 +38,13 @@
     display: flex;
     gap: .5rem;
 }
-.header__nav-ul a {
+.enlaces {
     color: #fff;
     padding: .7rem;
     border-radius: .1rem;
     transition: background-color .2s, color .2s;
 }
-.header__nav-ul a:hover {
+.enlaces:hover {
     background-color: #fff7;
     color: #000;
 }

@@ -1,4 +1,5 @@
 import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
 import './Item.css';
 
 function Item(producto) {
@@ -20,7 +21,9 @@ function Item(producto) {
                     <p>${prod.precio}</p>
                     <ItemCount>{prod}</ItemCount>
                 </div>
+                <Link to={`/PrimeraReact/Detalle/${prod.id}`}>
                 <button className="btnDetalles btn" onClick={(() => detail(prod))}>Ver más detalles</button>
+                </Link>
             </div>
         </div>
     )
