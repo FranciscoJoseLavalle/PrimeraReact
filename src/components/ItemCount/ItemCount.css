@@ -1,13 +1,11 @@
 .contenedor {
-    border: solid #ddd .15rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: .3rem;
     width: 100%;
     border-radius: .5rem;
-    box-shadow: #777 1px 1px 15px 1px;
-    padding: 2rem;
+    padding: 1rem;
     background-color: #fff;
 }
 .nombre {
@@ -32,34 +30,34 @@
     font-size: 2.75rem;
     cursor: pointer;
     padding: 0 .5rem;
-    color: #875;
+    color: #553a2b;
     transition: color .2s;
 }
 .contenedorContador button:hover {
-    color: #764;
+    color: #44291a;
 }
 .agregar {
     padding: .7rem;
     background-color: transparent;
-    border:solid .15rem #875;
+    border:solid .15rem #553a2b;
     border-radius: .3rem;
     width: 100%;
-    color: #875;
+    color: #553a2b;
     font-size: 1rem;
     margin-bottom: 1rem;
     transition: background-color .2s, color .2s;
 }
 .agregar:hover {
     color: #fff;
-    background-color: #875;
+    background-color: #553a2b;
 }
 @media (max-width: 411px) {
     .contenedor {
-        padding: 0;
+        padding: .5;
     }
 }
 @media (max-width: 343px) {
     .contenedor {
-        padding: 2rem;
+        padding: 1rem;
     }
 }
