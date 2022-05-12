@@ -75,12 +75,12 @@
         height: 5rem;
     }
 }
-@media (max-width: 411px) {
+@media (max-width: 416px) {
     .producto {
         width: 10rem;
     }
 }
-@media (max-width: 343px) {
+@media (max-width: 352px) {
     .producto {
         width: 17rem;
     }

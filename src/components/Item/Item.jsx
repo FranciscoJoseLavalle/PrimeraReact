@@ -21,7 +21,7 @@ function Item(producto) {
                     <p>${prod.precio}</p>
                     <ItemCount>{prod}</ItemCount>
                 </div>
-                <Link to={`/PrimeraReact/Detalle/${prod.id}`}>
+                <Link to={`PrimeraReact/Detalle/${prod.id}`}>
                 <button className="btnDetalles btn" onClick={(() => detail(prod))}>Ver más detalles</button>
                 </Link>
             </div>

@@ -10,7 +10,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path='/PrimeraReact' element = { <ItemListContainer /> }/>
-        <Route path='/PrimeraReact/detalle/:detalleId' element = { <ItemDetailContainer /> }/>
+        <Route path='/PrimeraReact/Detalle/:detalleId' element = { <ItemDetailContainer /> }/>
 
         <Route path='/*' element = { <Navigate to='/PrimeraReact' replace /> } />
       </Routes>
