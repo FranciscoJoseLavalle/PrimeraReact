@@ -1,17 +1,16 @@
 {
   "files": {
-    "main.css": "/PrimeraReact/static/css/main.e24dec89.css",
-    "main.js": "/PrimeraReact/static/js/main.0b2efea6.js",
+    "main.css": "/PrimeraReact/static/css/main.10c2219e.css",
+    "main.js": "/PrimeraReact/static/js/main.6c246dfe.js",
     "static/js/787.f499275f.chunk.js": "/PrimeraReact/static/js/787.f499275f.chunk.js",
     "static/media/fondo.jpeg": "/PrimeraReact/static/media/fondo.b55a3aec09d72b949e47.jpeg",
-    "static/media/cart.png": "/PrimeraReact/static/media/cart.e26818c0ffe739d3f9e1.png",
     "index.html": "/PrimeraReact/index.html",
-    "main.e24dec89.css.map": "/PrimeraReact/static/css/main.e24dec89.css.map",
-    "main.0b2efea6.js.map": "/PrimeraReact/static/js/main.0b2efea6.js.map",
+    "main.10c2219e.css.map": "/PrimeraReact/static/css/main.10c2219e.css.map",
+    "main.6c246dfe.js.map": "/PrimeraReact/static/js/main.6c246dfe.js.map",
     "787.f499275f.chunk.js.map": "/PrimeraReact/static/js/787.f499275f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e24dec89.css",
-    "static/js/main.0b2efea6.js"
+    "static/css/main.10c2219e.css",
+    "static/js/main.6c246dfe.js"
   ]
 }
