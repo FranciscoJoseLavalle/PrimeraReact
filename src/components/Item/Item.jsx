@@ -6,13 +6,9 @@ function Item(producto) {
 
     let prod = producto.children;
 
-    function detail(prod) {
-        console.log(prod)
-    }
-
     return (
         <div>
-            <div key={prod.id} className="producto">
+            <div key={prod.id}   className="producto">
                 <div className='imgCont'>
                     <img src={prod.imagen} alt="Imagen del producto" />
                 </div>
@@ -21,8 +17,8 @@ function Item(producto) {
                     <p>${prod.precio}</p>
                     <ItemCount>{prod}</ItemCount>
                 </div>
-                <Link to={`PrimeraReact/Detalle/${prod.id}`}>
-                <button className="btnDetalles btn" onClick={(() => detail(prod))}>Ver más detalles</button>
+                <Link to={`/PrimeraReact/Detalle/${prod.id}`}>
+                <button className="btnDetalles btn">Ver más detalles</button>
                 </Link>
             </div>
         </div>

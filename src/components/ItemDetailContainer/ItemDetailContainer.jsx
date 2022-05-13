@@ -13,7 +13,9 @@ let productosArr = [
     { nombre: 'Spirulina en polvo', nombrePlural: 'Spirulinas en polvo',id: '5', cantidad: 31, categoria: 'Suplementos', precio: '690', imagen: 'https://www.almacencamposverdes.com.ar/wp-content/uploads/2019/08/spirulina-en-polvo.jpg' },
     { nombre: 'Pelota', nombrePlural: 'Pelotas',id: '6', cantidad: 27, categoria: 'Yoga', precio: '620', imagen: 'https://m.media-amazon.com/images/I/61pxb9poQnL._AC_SX425_.jpg' },
     { nombre: 'Banco de Yoga', nombrePlural: 'Bancos de Yoga',id: '7', cantidad: 13, categoria: 'Yoga', precio: '12400', imagen: 'https://m.media-amazon.com/images/I/71V-J7lB3FL._AC_SX425_.jpg' },
-    { nombre: 'Cepillo de dientes de bambú', nombrePlural: 'Cepillos de dientes de bambú',id: '8', cantidad: 18, categoria: 'Cuidado personal', precio: '790', imagen: 'http://www.eldentistamoderno.com/wp-content/uploads/2019/11/Cepillos-de-bambu-640x427.jpg' }
+    { nombre: 'Cepillo de dientes de bambú', nombrePlural: 'Cepillos de dientes de bambú',id: '8', cantidad: 18, categoria: 'Cuidado personal', precio: '790', imagen: 'http://www.eldentistamoderno.com/wp-content/uploads/2019/11/Cepillos-de-bambu-640x427.jpg' },
+    { nombre: 'Vitamina C Natier', nombrePlural: 'Vitaminas C Natier', id: '9', cantidad: 13, categoria: 'Suplementos', precio: '1400', imagen: 'https://d3ugyf2ht6aenh.cloudfront.net/stores/001/040/363/products/vitamina-c1-c273a3eb00d847cb8415909495471596-640-0.jpg' },
+    { nombre: 'Cinta de Yoga', nombrePlural: 'Cintas de Yoga', id: '10', cantidad: 22, categoria: 'Yoga', precio: '840', imagen: 'https://d2j6dbq0eux0bg.cloudfront.net/images/14470064/863672998.jpg' }
 ];
 
 const tomarProductos = new Promise((resolve) => {
@@ -33,9 +35,6 @@ function ItemDetailContainer() {
         .then(respuesta => setProductos(respuesta.filter(producto => producto.id === detalleId)))
         .finally(() => setLoading(false))
     },[])
-
-    console.log(detalleId)
-    console.log(productos);
 
     return (
         <>

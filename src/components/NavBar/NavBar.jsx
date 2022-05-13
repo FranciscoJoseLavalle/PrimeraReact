@@ -7,15 +7,15 @@ function NavBar() {
         <header className="header">
             <nav className="header__nav">
                 <Link to="/PrimeraReact">
-                <h1 className='header__nav-h1'><a href="index.html"><span>Ayur</span>veda</a></h1>
+                    <h1 className='header__nav-h1'><span>Ayur</span>veda</h1>
                 </Link>
                 <div className='header__nav-cartul'>
                     <ul className="header__nav-ul">
                         <Link to="/PrimeraReact">
-                            <li><a href="#" className='enlaces'>Inicio</a></li>
+                            <li className='enlaces'>Inicio</li>
                         </Link>
                         <Link to="/PrimeraReact">
-                            <li><a href="#" className='enlaces'>Contacto</a></li>
+                            <li className='enlaces'>Contacto</li>
                         </Link>
                     </ul>
                     <CartWidget />

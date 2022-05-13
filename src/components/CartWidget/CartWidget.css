@@ -1,4 +1,5 @@
 .carritoImg {
     width: 3.5rem;
     cursor: pointer;
+    filter: invert(100%)
 }

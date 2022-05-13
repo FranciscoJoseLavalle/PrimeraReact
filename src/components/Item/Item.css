@@ -14,7 +14,7 @@
     border-radius: .3rem;
     transition: transform .2s;
     background-color: #fff;
-    box-shadow: #666 0 0 6px 0;
+    box-shadow: #ab9077 0 0 20px 1px;
     width: 20rem;
 }
 .producto:hover {
