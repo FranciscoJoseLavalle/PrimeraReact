@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/PrimeraReact/static/css/main.f13ed5b3.css",
-    "main.js": "/PrimeraReact/static/js/main.d462aa50.js",
+    "main.css": "/PrimeraReact/static/css/main.f4e289aa.css",
+    "main.js": "/PrimeraReact/static/js/main.cf149f0e.js",
     "static/js/787.f499275f.chunk.js": "/PrimeraReact/static/js/787.f499275f.chunk.js",
     "static/media/fondo.jpeg": "/PrimeraReact/static/media/fondo.b55a3aec09d72b949e47.jpeg",
     "index.html": "/PrimeraReact/index.html",
-    "main.f13ed5b3.css.map": "/PrimeraReact/static/css/main.f13ed5b3.css.map",
-    "main.d462aa50.js.map": "/PrimeraReact/static/js/main.d462aa50.js.map",
+    "main.f4e289aa.css.map": "/PrimeraReact/static/css/main.f4e289aa.css.map",
+    "main.cf149f0e.js.map": "/PrimeraReact/static/js/main.cf149f0e.js.map",
     "787.f499275f.chunk.js.map": "/PrimeraReact/static/js/787.f499275f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f13ed5b3.css",
-    "static/js/main.d462aa50.js"
+    "static/css/main.f4e289aa.css",
+    "static/js/main.cf149f0e.js"
   ]
 }
