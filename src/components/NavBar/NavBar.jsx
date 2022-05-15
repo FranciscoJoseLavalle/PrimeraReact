@@ -14,7 +14,7 @@ function NavBar() {
                         <Link to="/PrimeraReact">
                             <li className='enlaces'>Inicio</li>
                         </Link>
-                        <Link to="/PrimeraReact">
+                        <Link to="/PrimeraReact/Contacto">
                             <li className='enlaces'>Contacto</li>
                         </Link>
                     </ul>
