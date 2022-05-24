@@ -1,10 +1,12 @@
 import './ItemCount.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import CartContextProvider from '../../context/CartContext';
 
 function ItemCount({productos, countModified}) {
     const [count, setCount] = useState(parseFloat(1));
 
-    console.log(productos)
+    const {addToCart, cartList} = useContext(CartContext);
 
     // Sumar
     function sumar() {
@@ -23,12 +25,14 @@ function ItemCount({productos, countModified}) {
     // Agregar
     function onAdd() {
         if (count === 1) {
-            alert(`Agregaste ${count} ${productos.nombre}`)
+            // alert(`Agregaste ${count} ${productos.nombre}`)
         } else {
-            alert(`Agregaste ${count} ${productos.nombrePlural}`)
+            // alert(`Agregaste ${count} ${productos.nombrePlural}`)
         }
+        addToCart( {...productos, cantidad: count} );
         countModified();
     }
+    
     return(
         <div className='contenedor'>
             <div className='contenedorContador'>
@@ -36,7 +40,7 @@ function ItemCount({productos, countModified}) {
                 <p>{count}</p>
                 <button onClick={sumar}>+</button>
             </div>
-            <button className='agregar btn' onClick={onAdd}>Agregar al carrito</button>
+            <button className='agregar btn' onClick={() => onAdd()}>Agregar al carrito</button>
         </div>
     )
 }

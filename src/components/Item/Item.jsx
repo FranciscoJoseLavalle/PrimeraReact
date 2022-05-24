@@ -7,7 +7,7 @@ function Item({productos}) {
 
     return (
         <div>
-            <div key={productos.id}   className="producto">
+            <div className="producto">
                 <div className='imgCont'>
                     <img src={productos.imagen} alt="Imagen del producto" />
                 </div>

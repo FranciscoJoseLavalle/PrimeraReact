@@ -9,7 +9,6 @@ function Intercambiar({productos}) {
 
     function countModified() {
         setCount(false)
-        console.log(count)
     }
 
     return(
