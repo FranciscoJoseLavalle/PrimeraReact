@@ -73,7 +73,7 @@ function ItemListContainer() {
             </div>
 
             <h2>Nuestro catálogo</h2>
-            {loading ? <Loader /> : <ItemList>{productos}</ItemList>}
+            {loading ? <Loader /> : <ItemList productos={productos}/>}
         </>
     )
 }
