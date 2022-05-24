@@ -1,5 +1,5 @@
 import './ItemDetail.css';
-import ItemCount from '../ItemCount/ItemCount';
+import Intercambiar from '../Intercambiar/Intercambiar';
 
 function ItemDetail(productoDetail) {
     let producto = productoDetail.children;
@@ -13,7 +13,7 @@ function ItemDetail(productoDetail) {
                 <h4>El producto es {producto.nombre}</h4>
                 <p>${producto.precio}</p>
                 <p>Stock disponible: {producto.cantidad}</p>
-                <ItemCount>{producto}</ItemCount>
+                <Intercambiar>{producto}</Intercambiar>
             </div>
         </div>
     )

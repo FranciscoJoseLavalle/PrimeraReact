@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.0.0",
+    "react": "^18.1.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
@@ -41,5 +41,16 @@
   },
   "devDependencies": {
     "gh-pages": "^3.2.3"
+  },
+  "description": "Esto es una tienda de Ayurveda, se venden productos de cuidado personal como Yoga.\r Es realizado con React, usando React Hooks y React Router DOM.\r La idea es que sea un sitio intuitivo y agradable para que los usuarios se sientan cómodos interactuando con el mismo.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FranciscoJoseLavalle/PrimeraReact.git"
+  },
+  "author": "Francisco Jose Lavalle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FranciscoJoseLavalle/PrimeraReact/issues"
   }
 }

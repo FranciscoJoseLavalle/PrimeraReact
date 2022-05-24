@@ -9,10 +9,9 @@ import { CartContext } from './context/CartContext';
 
 function App() {
 
-  console.log(CartContext)
+  // console.log(CartContext)
   return (
     <BrowserRouter>
-      <CartContext.Provider>
         <NavBar />
         <Routes>
           <Route path='/PrimeraReact' element={<ItemListContainer />} />
@@ -23,7 +22,6 @@ function App() {
 
           <Route path='/*' element={<Navigate to='/PrimeraReact' replace />} />
         </Routes>
-      </CartContext.Provider>
     </BrowserRouter>
   );
 }

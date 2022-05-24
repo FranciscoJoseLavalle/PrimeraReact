@@ -1,31 +1,31 @@
 import './ItemCount.css';
 import React, { useState } from 'react';
 
-function ItemCount(prod) {
+function ItemCount({productos, countModified}) {
     const [count, setCount] = useState(parseFloat(1));
 
     // Sumar
     function sumar() {
-        if(count < prod.children.cantidad) {
+        if(count < productos.cantidad) {
             setCount(count + 1);
         }
     }
     
     // Restar
     function restar() {
-        if(count <= prod.children.cantidad && count > 1) {
+        if(count <= productos.cantidad && count > 1) {
             setCount(count - 1);
         }
     }
 
     // Agregar
     function onAdd() {
-        console.log(count);
         if (count === 1) {
-            alert(`Agregaste ${count} ${prod.children.nombre}`)
+            alert(`Agregaste ${count} ${productos.nombre}`)
         } else {
-            alert(`Agregaste ${count} ${prod.children.nombrePlural}`)
+            alert(`Agregaste ${count} ${productos.nombrePlural}`)
         }
+        countModified();
     }
     return(
         <div className='contenedor'>
