@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    height: 138.95px;
     gap: 1rem;
     background-color: #fff;
     padding: 1rem;
@@ -15,6 +16,7 @@
     border-radius: .3rem;
     cursor: pointer;
     width: 100%;
+    background-color: #fff;
     transition: background-color .2s, color .2s;
 }
 .inputContainer button:hover {

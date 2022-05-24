@@ -2,18 +2,18 @@ import './ItemDetail.css';
 import Intercambiar from '../Intercambiar/Intercambiar';
 
 function ItemDetail(productoDetail) {
-    let producto = productoDetail.children;
+    let productos = productoDetail.children;
 
     return (
         <div className='detalleContenedor'>
             <div className='detalleImgContenedor'>
-                <img className="detalleImg" src={producto.imagen} alt="Imagen" />
+                <img className="detalleImg" src={productos.imagen} alt="Imagen" />
             </div>
             <div className='detallesProducto'>
-                <h4>El producto es {producto.nombre}</h4>
-                <p>${producto.precio}</p>
-                <p>Stock disponible: {producto.cantidad}</p>
-                <Intercambiar>{producto}</Intercambiar>
+                <h4>El productos es {productos.nombre}</h4>
+                <p>${productos.precio}</p>
+                <p>Stock disponible: {productos.cantidad}</p>
+                <Intercambiar productos={productos} />
             </div>
         </div>
     )

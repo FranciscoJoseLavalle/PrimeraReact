@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 function ItemCount({productos, countModified}) {
     const [count, setCount] = useState(parseFloat(1));
 
+    console.log(productos)
+
     // Sumar
     function sumar() {
         if(count < productos.cantidad) {
