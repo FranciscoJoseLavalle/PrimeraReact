@@ -1,32 +1,38 @@
 import './ItemCount.css';
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
+import CartContextProvider from '../../context/CartContext';
 
-function ItemCount(prod) {
+function ItemCount({productos, countModified}) {
     const [count, setCount] = useState(parseFloat(1));
+
+    const {addToCart, cartList} = useContext(CartContext);
 
     // Sumar
     function sumar() {
-        if(count < prod.children.cantidad) {
+        if(count < productos.cantidad) {
             setCount(count + 1);
         }
     }
     
     // Restar
     function restar() {
-        if(count <= prod.children.cantidad && count > 1) {
+        if(count <= productos.cantidad && count > 1) {
             setCount(count - 1);
         }
     }
 
     // Agregar
     function onAdd() {
-        console.log(count);
         if (count === 1) {
-            alert(`Agregaste ${count} ${prod.children.nombre}`)
+            // alert(`Agregaste ${count} ${productos.nombre}`)
         } else {
-            alert(`Agregaste ${count} ${prod.children.nombrePlural}`)
+            // alert(`Agregaste ${count} ${productos.nombrePlural}`)
         }
+        addToCart( {...productos, cantidad: count} );
+        countModified();
     }
+    
     return(
         <div className='contenedor'>
             <div className='contenedorContador'>
@@ -34,7 +40,7 @@ function ItemCount(prod) {
                 <p>{count}</p>
                 <button onClick={sumar}>+</button>
             </div>
-            <button className='agregar btn' onClick={onAdd}>Agregar al carrito</button>
+            <button className='agregar btn' onClick={() => onAdd()}>Agregar al carrito</button>
         </div>
     )
 }

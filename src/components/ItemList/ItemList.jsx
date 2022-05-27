@@ -1,11 +1,9 @@
 import Item from "../Item/Item";
 
-function ItemList(productosArr) {
-
-    let productos = productosArr.children;
+function ItemList({productos}) {
     return (
         <div className="catalogo">
-            {productos.map(producto => (<Item>{producto}</Item>))}
+            {productos.map(productos => (<Item key={productos.id} productos={productos}/>))}
         </div>
     )
 }

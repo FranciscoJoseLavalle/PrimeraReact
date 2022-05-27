@@ -1,0 +1,25 @@
+.inputContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 138.95px;
+    gap: 1rem;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+.inputContainer button {
+    padding: .5rem;
+    font-size: 1rem;
+    border: solid .15rem #553a2b;
+    color: #553a2b;
+    border-radius: .3rem;
+    cursor: pointer;
+    width: 100%;
+    background-color: #fff;
+    transition: background-color .2s, color .2s;
+}
+.inputContainer button:hover {
+    background-color: #553a2b;
+    color: #fff;
+}
