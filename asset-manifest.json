@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/PrimeraReact/static/css/main.fdf158ac.css",
-    "main.js": "/PrimeraReact/static/js/main.0a1ca3fa.js",
+    "main.js": "/PrimeraReact/static/js/main.ae6461ac.js",
     "static/js/787.f499275f.chunk.js": "/PrimeraReact/static/js/787.f499275f.chunk.js",
     "static/media/fondo.jpeg": "/PrimeraReact/static/media/fondo.b55a3aec09d72b949e47.jpeg",
     "static/media/filter.png": "/PrimeraReact/static/media/filter.84a487c3b9c2eba31bd2.png",
     "index.html": "/PrimeraReact/index.html",
     "main.fdf158ac.css.map": "/PrimeraReact/static/css/main.fdf158ac.css.map",
-    "main.0a1ca3fa.js.map": "/PrimeraReact/static/js/main.0a1ca3fa.js.map",
+    "main.ae6461ac.js.map": "/PrimeraReact/static/js/main.ae6461ac.js.map",
     "787.f499275f.chunk.js.map": "/PrimeraReact/static/js/787.f499275f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.fdf158ac.css",
-    "static/js/main.0a1ca3fa.js"
+    "static/js/main.ae6461ac.js"
   ]
 }
