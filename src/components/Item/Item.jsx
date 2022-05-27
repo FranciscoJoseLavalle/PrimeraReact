@@ -14,7 +14,6 @@ function Item({productos}) {
                 <div className='producto__informacion'>
                     <h4>{productos.nombre}</h4>
                     <p>${productos.precio}</p>
-                    {/* <ItemCount productos={productos} /> */}
                     <Intercambiar productos={productos} />
                 </div>
                 <Link to={`/PrimeraReact/Detalle/${productos.id}`}>

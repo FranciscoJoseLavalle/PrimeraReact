@@ -6,6 +6,7 @@ function CartContextProvider({children}) {
 
     const [cartList, setCartList] = useState([]);
     const [cantidad, setCantidad] = useState()
+    const [precio, setPrecio] = useState()
 
     function isInCart(id) {
         return cartList.some(el => el.id === id);
@@ -17,10 +18,12 @@ function CartContextProvider({children}) {
             const newCartList = cartList;
             newCartList[i].cantidad += item.cantidad;
             setCartList(newCartList);
-        } else setCartList([
-            ...cartList,
-            item
-        ])
+        } else {
+            setCartList([
+                ...cartList,
+                item
+            ])
+        }
     }
     
     function disminuirCantidad(producto) {

@@ -1,12 +1,18 @@
 .inputContainer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: 138.95px;
     gap: 1rem;
     background-color: #fff;
     padding: 1rem;
     border-radius: .5rem;
+}
+@media (max-width: 416px) {
+    .inputContainer {
+        padding: .279rem;
+    }
 }
 .inputContainer button {
     padding: .5rem;

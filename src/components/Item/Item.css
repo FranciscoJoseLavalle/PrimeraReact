@@ -53,7 +53,7 @@
 @media (max-width: 690px) {
     .producto {
         width: 12rem;
-        height: 27rem;
+        height: 22rem;
     }
     .imgCont {
         height: 5rem;
@@ -67,7 +67,7 @@
         height: 7rem;
     }
 }
-@media (max-width: 510px) {
+@media (max-width: 511px) {
     .producto {
         width: 12rem;
     }
@@ -78,6 +78,9 @@
 @media (max-width: 416px) {
     .producto {
         width: 10rem;
+    }
+    .imgCont {
+        height: 5rem;
     }
 }
 @media (max-width: 352px) {
