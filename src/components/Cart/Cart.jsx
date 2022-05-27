@@ -3,8 +3,9 @@ import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 function Cart() {
-    const { cartList, vaciarCarrito } = useContext(CartContext);
+    const { cartList, vaciarCarrito, disminuirCantidad, aumentarCantidad } = useContext(CartContext);
     
+
 
     return (
         <div className='carrito'>
@@ -14,10 +15,14 @@ function Cart() {
                     <p>{producto.nombre}</p>
                     <p>${producto.precio}</p>
                     <img src={producto.imagen} alt="" />
-                    <p>Cantidad: {producto.cantidad}</p>
+                    <div className='removeBtn'>
+                        <button onClick={() => disminuirCantidad(producto)}>-</button>
+                        <p>Cantidad: {producto.cantidad}</p>
+                        <button onClick={() => aumentarCantidad(producto)}>+</button>
+                    </div>
                 </div>)}
             </div>
-            
+
             <button className='vaciar' onClick={vaciarCarrito}>Vaciar Carrito</button>
         </div>
     )
