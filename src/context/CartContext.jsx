@@ -5,8 +5,10 @@ export const CartContext = createContext([])
 function CartContextProvider({children}) {
 
     const [cartList, setCartList] = useState([]);
-    const [cantidad, setCantidad] = useState()
-    const [precio, setPrecio] = useState()
+    const [cantidad, setCantidad] = useState();
+    const [precio, setPrecio] = useState();
+    const [precioTotal, setPrecioTotal] = useState(0);
+    const [productosTotales, setProductosTotales] = useState(0);
 
     function isInCart(id) {
         return cartList.some(el => el.id === id);
@@ -18,11 +20,13 @@ function CartContextProvider({children}) {
             const newCartList = cartList;
             newCartList[i].cantidad += item.cantidad;
             setCartList(newCartList);
+            actualizarCarrito();
         } else {
             setCartList([
                 ...cartList,
                 item
             ])
+            actualizarCarrito();
         }
     }
     
@@ -32,18 +36,28 @@ function CartContextProvider({children}) {
             const newCartList = cartList.filter(element => element.cantidad !== 0);
             setCartList(newCartList);
         }
+        actualizarCarrito();
     }
     
     function aumentarCantidad(producto) {
-        setCantidad(producto.cantidad++)
+        setCantidad(producto.cantidad++);
+        actualizarCarrito();
     }
 
+    function actualizarCarrito() {
+        setPrecioTotal(cartList.map(element => element.cantidad*element.precio).reduce((anterior, siguiente) => anterior + siguiente, 0));
+        
+        setProductosTotales(cartList.map(element => element.cantidad).reduce((anterior, siguiente) => anterior + siguiente, 0))
+    }
+
+
     function vaciarCarrito() {
-        setCartList([])
+        setCartList([]);
+        actualizarCarrito();
     }
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, vaciarCarrito, disminuirCantidad, aumentarCantidad}}>
+        <CartContext.Provider value={{cartList, addToCart, vaciarCarrito, disminuirCantidad, aumentarCantidad, precioTotal, setPrecioTotal, setProductosTotales, productosTotales}}>
             {children}
         </CartContext.Provider>
     )

@@ -1,19 +1,34 @@
 import './Cart.css';
 import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { CartContext } from '../../context/CartContext';
 
 function Cart() {
-    const { cartList, vaciarCarrito, disminuirCantidad, aumentarCantidad } = useContext(CartContext);
+    const { cartList, vaciarCarrito, disminuirCantidad, aumentarCantidad, precioTotal, setPrecioTotal, setProductosTotales, productosTotales } = useContext(CartContext);
 
 
 
-    return (
-        <div className='carrito'>
+    setPrecioTotal(cartList.map(element => element.cantidad * element.precio).reduce((anterior, siguiente) => anterior + siguiente, 0))
+
+    setProductosTotales(cartList.map(element => element.cantidad).reduce((anterior, siguiente) => anterior + siguiente, 0))
+
+    if (!productosTotales) {
+        return (
+            <div className='carrito'>
+                <h2>Carrito</h2>
+                <p>Carrito vacio</p>
+                <Link className='inicioBtn' to="/PrimeraReact/">
+                    <button className='inicio'>Volver al inicio</button>
+                   </Link>
+            </div>
+        )
+    } else {
+        return(<div className='carrito'>
             <h2>Carrito</h2>
             <div className='productosCont'>
                 {cartList.map(producto => <div key={producto.id} className="cartContainer">
                     <p>{producto.nombre}</p>
-                    <p>${producto.precio*producto.cantidad}</p>
+                    <p>${producto.precio * producto.cantidad}</p>
                     <img src={producto.imagen} alt="" />
                     <div className='removeItems'>
                         <div className='contenedorContador'>
@@ -24,10 +39,11 @@ function Cart() {
                     </div>
                 </div>)}
             </div>
+            <p>Precio final: ${precioTotal}</p>
 
             <button className='vaciar' onClick={vaciarCarrito}>Vaciar Carrito</button>
         </div>
-    )
+    )}
 }
 
 export default Cart;

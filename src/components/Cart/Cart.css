@@ -36,7 +36,7 @@
 .removeItems .contenedorContador{
     background-color: #fff;
 }
-.vaciar {
+.vaciar, .inicio {
     padding: .7rem;
     background-color: transparent;
     border:solid .15rem #553a2b;
@@ -44,11 +44,18 @@
     width: 50%;
     color: #553a2b;
     font-size: 1rem;
-    margin-bottom: 1rem;
     transition: background-color .2s, color .2s;
-    margin-top: 1rem;
+    cursor: pointer;
 }
-.vaciar:hover {
+.vaciar, .inicioBtn {
+    margin: 1rem 0;
+}
+.vaciar:hover, .inicio:hover {
     background-color: #553a2b;
     color: #fff;
+}
+.inicioBtn {
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }

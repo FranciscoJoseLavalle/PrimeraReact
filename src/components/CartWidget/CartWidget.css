@@ -3,3 +3,17 @@
     cursor: pointer;
     filter: invert(100%)
 }
+.carritoWidget {
+    display: flex;
+    align-items: center;
+}
+.productosTotales {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    width: min-content;
+    height: 1.5rem;
+}
