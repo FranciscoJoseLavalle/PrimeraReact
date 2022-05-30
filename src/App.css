@@ -14,3 +14,12 @@ Fuentes */
 body {
     background-color: #efd3bb;
 }
+body::-webkit-scrollbar {
+    width: .6rem;
+    
+}
+/* #ba8469 */
+body::-webkit-scrollbar-thumb {
+    background-color: #dca67b;
+    border-radius: .5rem;
+}

@@ -5,14 +5,13 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import Cart from './components/Cart/Cart';
 import NavBar from './components/NavBar/NavBar';
 import Contacto from './components/Contacto/Contacto';
-import { CartContext } from './context/CartContext';
+import CartContextProvider from './context/CartContext';
 
 function App() {
 
-  console.log(CartContext)
   return (
     <BrowserRouter>
-      <CartContext.Provider>
+      <CartContextProvider>
         <NavBar />
         <Routes>
           <Route path='/PrimeraReact' element={<ItemListContainer />} />
@@ -23,7 +22,7 @@ function App() {
 
           <Route path='/*' element={<Navigate to='/PrimeraReact' replace />} />
         </Routes>
-      </CartContext.Provider>
+      </CartContextProvider>
     </BrowserRouter>
   );
 }

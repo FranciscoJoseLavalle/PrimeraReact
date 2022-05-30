@@ -44,7 +44,6 @@
     width: 100%;
     color: #553a2b;
     font-size: 1rem;
-    margin-bottom: 1rem;
     transition: background-color .2s, color .2s;
 }
 .agregar:hover {
