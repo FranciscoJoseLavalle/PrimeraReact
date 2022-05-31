@@ -36,7 +36,7 @@
 .removeItems .contenedorContador{
     background-color: #fff;
 }
-.vaciar, .inicio {
+.vaciar, .inicio, .botones input {
     padding: .7rem;
     background-color: transparent;
     border:solid .15rem #553a2b;
@@ -50,7 +50,7 @@
 .vaciar, .inicioBtn {
     margin: 1rem 0;
 }
-.vaciar:hover, .inicio:hover {
+.vaciar:hover, .inicio:hover, .botones input:hover {
     background-color: #553a2b;
     color: #fff;
 }

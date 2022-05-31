@@ -16,18 +16,19 @@ function Cart() {
         return (
             <div className='carrito'>
                 <h2>Carrito</h2>
-                <p>Carrito vacio</p>
+                <p>Carrito vacío... ¿Deseas volver al inicio?</p>
                 <Link className='inicioBtn' to="/PrimeraReact/">
                     <button className='inicio'>Volver al inicio</button>
                    </Link>
             </div>
         )
     } else {
-        return(<div className='carrito'>
+        return(
+        <div className='carrito'>
             <h2>Carrito</h2>
             <div className='productosCont'>
                 {cartList.map(producto => <div key={producto.id} className="cartContainer">
-                    <p>{producto.nombre}</p>
+                    <h4>{producto.nombre}</h4>
                     <p>${producto.precio * producto.cantidad}</p>
                     <img src={producto.imagen} alt="" />
                     <div className='removeItems'>
