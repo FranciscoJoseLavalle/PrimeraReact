@@ -37,7 +37,7 @@ function Cart() {
                                 <p>Cantidad: {producto.cantidad}</p>
                                 <button onClick={() => aumentarCantidad(producto)}>+</button>
                             </div>
-                            <button onClick={ () => borrar(producto) }>X</button>
+                            <button className='btnBorrar' onClick={ () => borrar(producto) }>X</button>
                         </div>
                     </div>)}
                 </div>
