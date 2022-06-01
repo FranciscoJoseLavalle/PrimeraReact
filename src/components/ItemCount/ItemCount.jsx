@@ -10,9 +10,11 @@ function ItemCount({productos, countModified}) {
 
     console.log(productos)
 
+    let newCartList = cartList.filter(producto => producto.id === productos.id)
+    console.log(newCartList);
     // Sumar
     function sumar() {
-        if(count < productos.stock) {
+        if(count < productos.stock && newCartList.cantidad < count) {
             setCount(count + 1);
         }
     }
