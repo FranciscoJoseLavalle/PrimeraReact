@@ -3,36 +3,41 @@ import React, { useState, useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import CartContextProvider from '../../context/CartContext';
 
-function ItemCount({productos, countModified}) {
+function ItemCount({ productos, countModified }) {
     const [count, setCount] = useState(parseFloat(1));
 
-    const {addToCart, cartList} = useContext(CartContext);
+    const { addToCart, cartList } = useContext(CartContext);
 
-    console.log(productos)
+    // console.log(productos)
 
-    let newCartList = cartList.filter(producto => producto.id === productos.id)
-    console.log(newCartList);
+    let newCartList = cartList.filter(producto => producto.id === productos.id);
     // Sumar
     function sumar() {
-        if(count < productos.stock || newCartList.cantidad > count) {
-            setCount(count + 1);
+        if (newCartList.length === 0) {
+            if (count < productos.stock) {
+                setCount(count + 1);
+            }
+        } else {
+            if (count < productos.stock && (newCartList[0].cantidad + count) < productos.stock) {
+                setCount(count + 1);
+            }
         }
     }
-    
+
     // Restar
     function restar() {
-        if(count <= productos.stock && count > 1) {
+        if (count <= productos.stock && count > 1) {
             setCount(count - 1);
         }
     }
 
     // Agregar
     function onAdd() {
-        addToCart( {...productos, cantidad: count} );
+        addToCart({ ...productos, cantidad: count });
         countModified();
     }
-    
-    return(
+
+    return (
         <div className='contenedor'>
             <div className='contenedorContador'>
                 <button onClick={restar}>-</button>

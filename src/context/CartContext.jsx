@@ -28,7 +28,6 @@ function CartContextProvider({children}) {
             ])
             actualizarCarrito();
         }
-        console.log(item)
     }
     
     function disminuirCantidad(producto) {
@@ -53,6 +52,10 @@ function CartContextProvider({children}) {
         setProductosTotales(cartList.map(element => element.cantidad).reduce((anterior, siguiente) => anterior + siguiente, 0))
     }
 
+    function borrar(producto) {
+        let newCartList = cartList.filter(element => element.id !== producto.id)
+        setCartList(newCartList)
+    }
 
     function vaciarCarrito() {
         setCartList([]);
@@ -60,7 +63,7 @@ function CartContextProvider({children}) {
     }
 
     return(
-        <CartContext.Provider value={{cartList, addToCart, vaciarCarrito, disminuirCantidad, aumentarCantidad, precioTotal, setPrecioTotal, setProductosTotales, productosTotales}}>
+        <CartContext.Provider value={{cartList, addToCart, vaciarCarrito, disminuirCantidad, aumentarCantidad, precioTotal, setPrecioTotal, setProductosTotales, productosTotales, borrar}}>
             {children}
         </CartContext.Provider>
     )
