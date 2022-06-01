@@ -14,7 +14,7 @@ function ItemCount({productos, countModified}) {
     console.log(newCartList);
     // Sumar
     function sumar() {
-        if(count < productos.stock && newCartList.cantidad < count) {
+        if(count < productos.stock || newCartList.cantidad > count) {
             setCount(count + 1);
         }
     }
