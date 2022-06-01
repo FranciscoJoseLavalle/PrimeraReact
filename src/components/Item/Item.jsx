@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Item.css';
 
 function Item({productos}) {
-
+    
     return (
         <div>
             <div className="producto">

@@ -28,6 +28,7 @@ function CartContextProvider({children}) {
             ])
             actualizarCarrito();
         }
+        console.log(item)
     }
     
     function disminuirCantidad(producto) {
@@ -40,8 +41,10 @@ function CartContextProvider({children}) {
     }
     
     function aumentarCantidad(producto) {
-        setCantidad(producto.cantidad++);
-        actualizarCarrito();
+        if (producto.cantidad < producto.stock) {
+            setCantidad(producto.cantidad++);
+            actualizarCarrito();
+        }
     }
 
     function actualizarCarrito() {

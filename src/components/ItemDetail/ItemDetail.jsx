@@ -1,8 +1,7 @@
 import './ItemDetail.css';
 import Intercambiar from '../Intercambiar/Intercambiar';
 
-function ItemDetail(productoDetail) {
-    let productos = productoDetail.children;
+function ItemDetail({productos}) {
 
     return (
         <div className='detalleContenedor'>
@@ -10,9 +9,9 @@ function ItemDetail(productoDetail) {
                 <img className="detalleImg" src={productos.imagen} alt="Imagen" />
             </div>
             <div className='detallesProducto'>
-                <h4>El productos es {productos.nombre}</h4>
+                <h4>El producto es {productos.nombre}</h4>
                 <p>${productos.precio}</p>
-                <p>Stock disponible: {productos.cantidad}</p>
+                <p>Stock disponible: {productos.stock}</p>
                 <Intercambiar productos={productos} />
             </div>
         </div>

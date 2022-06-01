@@ -8,27 +8,24 @@ function ItemCount({productos, countModified}) {
 
     const {addToCart, cartList} = useContext(CartContext);
 
+    console.log(productos)
+
     // Sumar
     function sumar() {
-        if(count < productos.cantidad) {
+        if(count < productos.stock) {
             setCount(count + 1);
         }
     }
     
     // Restar
     function restar() {
-        if(count <= productos.cantidad && count > 1) {
+        if(count <= productos.stock && count > 1) {
             setCount(count - 1);
         }
     }
 
     // Agregar
     function onAdd() {
-        if (count === 1) {
-            // alert(`Agregaste ${count} ${productos.nombre}`)
-        } else {
-            // alert(`Agregaste ${count} ${productos.nombrePlural}`)
-        }
         addToCart( {...productos, cantidad: count} );
         countModified();
     }

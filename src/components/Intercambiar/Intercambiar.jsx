@@ -5,8 +5,6 @@ import { useState } from 'react';
 function Intercambiar({productos}) {
     const [count, setCount] = useState(true);
 
-    // console.log(productos)
-
     function countModified() {
         setCount(false)
     }
