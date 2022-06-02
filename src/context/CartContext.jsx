@@ -6,7 +6,6 @@ function CartContextProvider({children}) {
 
     const [cartList, setCartList] = useState([]);
     const [cantidad, setCantidad] = useState();
-    const [precio, setPrecio] = useState();
     const [precioTotal, setPrecioTotal] = useState(0);
     const [productosTotales, setProductosTotales] = useState(0);
 

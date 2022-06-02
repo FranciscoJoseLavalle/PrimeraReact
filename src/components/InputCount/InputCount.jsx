@@ -1,5 +1,6 @@
-import './InputCount.css'
 import { Link } from 'react-router-dom';
+
+import './InputCount.css';
 
 function InputCount() {
     return (

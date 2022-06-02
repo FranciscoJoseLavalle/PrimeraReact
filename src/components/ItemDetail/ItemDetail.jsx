@@ -1,5 +1,6 @@
-import './ItemDetail.css';
 import Intercambiar from '../Intercambiar/Intercambiar';
+
+import './ItemDetail.css';
 
 function ItemDetail({productos}) {
 

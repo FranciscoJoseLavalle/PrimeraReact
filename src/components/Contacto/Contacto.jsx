@@ -1,6 +1,10 @@
 import './Contacto.css';
 
 function Contacto() {
+    function sacarEvento(e) {
+        e.preventDefault();
+    }
+
     return (
         <>
             <h2>Contacto</h2>
@@ -18,7 +22,7 @@ function Contacto() {
                     <textarea name="message" id="message"></textarea>
                 </div>
                 <div className='botones'>
-                    <input type="submit" value="Enviar" />
+                    <input type="submit" value="Enviar" onClick={(e) => sacarEvento(e)}/>
                     <input type="reset" value="Borrar" />
                 </div>
             </form>

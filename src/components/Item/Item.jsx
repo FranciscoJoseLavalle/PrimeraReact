@@ -1,6 +1,7 @@
-import ItemCount from '../ItemCount/ItemCount';
-import Intercambiar from '../Intercambiar/Intercambiar';
 import { Link } from 'react-router-dom';
+
+import Intercambiar from '../Intercambiar/Intercambiar';
+
 import './Item.css';
 
 function Item({productos}) {

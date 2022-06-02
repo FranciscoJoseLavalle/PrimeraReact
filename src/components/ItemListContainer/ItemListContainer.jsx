@@ -1,43 +1,27 @@
-import './ItemListContainer.css';
 import { useState, useEffect } from 'react';
 import { Link, NavLink, useParams } from 'react-router-dom';
+import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+
 import ItemList from '../ItemList/ItemList';
 import Loader from '../Loader/Loader';
 import filter from '../../assets/images/filter.png';
-import { getFirestore, doc, getDoc, collection, getDocs, query, where } from 'firebase/firestore';
+
+import './ItemListContainer.css';
 
 function ItemListContainer() {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const { id } = useParams();
-    
-    useEffect(() => {
-        const db = getFirestore();
-        const queryCollection = collection(db, 'items');
-        getDocs(queryCollection)
-            .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
-            .catch((err) => console.log(err))
-            .finally(() => setLoading(false))
-    }, [])
 
     useEffect(() => {
-        if (id) {
-            setLoading(true);
-            const db = getFirestore();
-            const queryCollection = collection(db, 'items');
-            const queryCollectionFilter = query(queryCollection, where('categoria', '==', id))
-            getDocs(queryCollectionFilter)
-                .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
-                .finally(() => setLoading(false))
-        } else {
-            setLoading(true);
-            const db = getFirestore();
-            const queryCollection = collection(db, 'items');
-            getDocs(queryCollection)
-                .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
-                .finally(() => setLoading(false))
-        }
+        setLoading(true);
+        const db = getFirestore();
+        const queryCollection = collection(db, 'items');
+        const queryCollectionFilter = id ? query(queryCollection, where('categoria', '==', id)) : queryCollection
+        getDocs(queryCollectionFilter)
+            .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
+            .finally(() => setLoading(false))
     }, [id])
 
     function filtrado() {

@@ -1,6 +1,7 @@
+import { useState } from 'react';
+
 import ItemCount from '../ItemCount/ItemCount';
 import InputCount from '../InputCount/InputCount';
-import { useState } from 'react';
 
 function Intercambiar({productos}) {
     const [count, setCount] = useState(true);

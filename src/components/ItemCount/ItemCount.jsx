@@ -1,14 +1,23 @@
-import './ItemCount.css';
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
+
 import { CartContext } from '../../context/CartContext';
-import CartContextProvider from '../../context/CartContext';
+
+import './ItemCount.css';
 
 function ItemCount({ productos, countModified }) {
     const [count, setCount] = useState(parseFloat(1));
-
+    const [stockActual, setStockActual] = useState(false);
     const { addToCart, cartList } = useContext(CartContext);
 
-    // console.log(productos)
+    useEffect(() => {
+        if (newCartList.length !== 0) {
+            if (newCartList[0].cantidad === productos.stock) {
+                setStockActual(true);
+            }  else {
+                setStockActual(false);
+            }
+        }
+    }, [])
 
     let newCartList = cartList.filter(producto => producto.id === productos.id);
     // Sumar
@@ -32,9 +41,9 @@ function ItemCount({ productos, countModified }) {
     }
 
     // Agregar
-    function onAdd() {
-        addToCart({ ...productos, cantidad: count });
-        countModified();
+    function onAdd() { 
+            addToCart({ ...productos, cantidad: count });
+            countModified();
     }
 
     return (
@@ -44,7 +53,9 @@ function ItemCount({ productos, countModified }) {
                 <p>{count}</p>
                 <button onClick={sumar}>+</button>
             </div>
-            <button className='agregar btn' onClick={() => onAdd()}>Agregar al carrito</button>
+            { stockActual ? 
+            <button className='agregar btn'>Sin stock</button> : <button className='agregar btn' onClick={() => onAdd()}>Agregar al carrito</button>}
+            
         </div>
     )
 }
