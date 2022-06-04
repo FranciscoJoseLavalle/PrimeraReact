@@ -36,7 +36,7 @@
 .removeItems .contenedorContador{
     background-color: #fff;
 }
-.vaciar, .inicio, .botones input, .btnBorrar {
+.vaciar, .inicio, .botones input, .btnBorrar, .comprar {
     padding: .7rem;
     background-color: transparent;
     border:solid .15rem #553a2b;
@@ -50,9 +50,12 @@
 .vaciar, .inicioBtn {
     margin: 1rem 0;
 }
-.vaciar:hover, .inicio:hover, .botones input:hover, .btnBorrar:hover {
+.vaciar:hover, .inicio:hover, .botones input:hover, .btnBorrar:hover, .comprar:hover {
     background-color: #553a2b;
     color: #fff;
+}
+.comprar {
+    width: 100%;
 }
 .inicioBtn {
     display: flex;
