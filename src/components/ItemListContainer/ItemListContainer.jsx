@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { Link, NavLink, useParams } from 'react-router-dom';
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 
 import ItemList from '../ItemList/ItemList';
+import { CartContext } from '../../context/CartContext';
 import Loader from '../Loader/Loader';
 import filter from '../../assets/images/filter.png';
 
@@ -11,6 +12,7 @@ import './ItemListContainer.css';
 function ItemListContainer() {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { actualizarCarrito } = useContext(CartContext);
 
     const { id } = useParams();
 

@@ -1,0 +1,22 @@
+h3, h4, ul {
+    text-align: center;
+}
+ul {
+    margin-bottom: 5rem;
+}
+
+.btn {
+    padding: .7rem;
+    background-color: transparent;
+    border:solid .15rem #553a2b;
+    border-radius: .3rem;
+    width: 100%;
+    color: #553a2b;
+    font-size: 1rem;
+    transition: background-color .2s, color .2s;
+    cursor: pointer;
+}
+.btn:hover {
+    background-color: #553a2b;
+    color: #fff;
+}

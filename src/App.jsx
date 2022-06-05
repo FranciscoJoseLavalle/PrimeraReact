@@ -8,6 +8,7 @@ import Contacto from './components/Contacto/Contacto';
 import CartContextProvider from './context/CartContext';
 
 import './App.css';
+import Admin from './components/Admin/Admin';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
           <Route path='/PrimeraReact/Categorias/:id' element={<ItemListContainer />} />
           <Route path='/PrimeraReact/Detalle/:detalleId' element={<ItemDetailContainer />} />
           <Route path='/PrimeraReact/Cart' element={<Cart />} />
-          <Route path='/PrimeraReact/Contacto' element={<Contacto />} />
+          <Route path='/PrimeraReact/Admin' element={<Admin />} />
 
           <Route path='/*' element={<Navigate to='/PrimeraReact' replace />} />
         </Routes>

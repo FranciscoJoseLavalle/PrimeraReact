@@ -16,8 +16,8 @@ function NavBar() {
                         <Link to="/PrimeraReact">
                             <li className='enlaces'>Inicio</li>
                         </Link>
-                        <Link to="/PrimeraReact/Contacto">
-                            <li className='enlaces'>Contacto</li>
+                        <Link to="/PrimeraReact/Admin">
+                            <li className='enlaces'>Admin</li>
                         </Link>
                     </ul>
                     <CartWidget />
