@@ -1,3 +1,4 @@
+import { documentId } from 'firebase/firestore';
 import React, { useState, useContext, useEffect } from 'react';
 
 import { CartContext } from '../../context/CartContext';
@@ -9,13 +10,28 @@ function ItemCount({ productos, countModified }) {
     const [stockActual, setStockActual] = useState(false);
     const { addToCart, cartList } = useContext(CartContext);
 
+    // useEffect(() => {
+    //     const db = getFirestore();
+    //     const queryCollection = collection(db, 'items');
+    //     const queryCollectionFilter = query(queryCollection, where(documentId(), 'in', ))
+    //     getDocs(queryCollectionFilter)
+    //         .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
+    //         .finally(() => setStockActual(true))
+    // }, [])
+
+
+    console.log(productos.stock)
+
     useEffect(() => {
         if (newCartList.length !== 0) {
-            if (newCartList[0].cantidad === productos.stock) {
+            if (newCartList[0].cantidad === productos.stock || productos.stock === 0) {
                 setStockActual(true);
             }  else {
                 setStockActual(false);
             }
+        }
+        if (productos.stock === 0) {
+            setStockActual(true)
         }
     }, [])
 
@@ -53,8 +69,12 @@ function ItemCount({ productos, countModified }) {
                 <p>{count}</p>
                 <button onClick={sumar}>+</button>
             </div>
-            { stockActual ? 
-            <button className='agregar btn'>Sin stock</button> : <button className='agregar btn' onClick={() => onAdd()}>Agregar al carrito</button>}
+            { 
+            stockActual ? 
+            <button className='agregar btn'>Sin stock</button> 
+            : 
+            <button className='agregar btn' onClick={() => onAdd()}>Agregar al carrito</button>
+            }
             
         </div>
     )

@@ -1,7 +1,7 @@
 import './Cart.css';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getFirestore, collection, getDocs, query, where, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, query, where, addDoc, writeBatch, documentId } from 'firebase/firestore';
 import { CartContext } from '../../context/CartContext';
 import CartItem from '../CartItem/CartItem';
 
@@ -21,7 +21,7 @@ function Cart() {
         })
     }
 
-    function sendOrder(e) {
+    async function sendOrder(e) {
         e.preventDefault();
         let order = {};
 
@@ -37,6 +37,20 @@ function Cart() {
         order.total = precioTotal;
 
         const db = getFirestore();
+        const queryCollectionStock = collection(db, 'items');
+        const queryUpdateStock = query(
+            queryCollectionStock,
+            where( documentId(), 'in', cartList.map(it => it.id) ))
+        
+        const batch = writeBatch(db)
+
+        await getDocs(queryUpdateStock)
+        .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+            stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad })))
+
+        batch.commit();
+        
+        
         const queryCollectionOrders = collection(db, 'orders')
         addDoc(queryCollectionOrders, order)
             .catch(err => console.log(err))

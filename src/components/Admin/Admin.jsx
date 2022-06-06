@@ -51,27 +51,27 @@ function Admin() {
                     <h3>Agregar productos</h3>
                     <form onSubmit={(e) => addNewProduct(e)} className="form">
                         <label htmlFor="productName">Nombre</label>
-                        <input type="text" htmlFor="productName" onChange={ev => setProductName(ev.target.value)}/>
+                        <input type="text" htmlFor="productName" onChange={ev => setProductName(ev.target.value)} required/>
 
                         <label htmlFor="productNameInPlural">Nombre en plural</label>
-                        <input type="text" htmlFor="productNameInPlural" onChange={ev => setPluralName(ev.target.value)}/>
+                        <input type="text" htmlFor="productNameInPlural" onChange={ev => setPluralName(ev.target.value)} required/>
 
                         <label htmlFor="category">Categoría</label>
-                        <input type="text" htmlFor="category" onChange={ev => setCategory(ev.target.value)}/>
+                        <input type="text" htmlFor="category" onChange={ev => setCategory(ev.target.value)} required/>
 
                         <label htmlFor="price">Precio</label>
-                        <input type="text" htmlFor="price" onChange={ev => setPrice(ev.target.value)}/>
+                        <input type="text" htmlFor="price" onChange={ev => setPrice(ev.target.value)} required/>
                         
                         <label htmlFor="stock">Stock</label>
-                        <input type="text" htmlFor="stock" onChange={ev => setStock(ev.target.value)}/>
+                        <input type="text" htmlFor="stock" onChange={ev => setStock(ev.target.value)} required/>
                         
                         <label htmlFor="image">Imagen URL</label>
-                        <input type="text" htmlFor="image" onChange={ev => setImage(ev.target.value)}/>
+                        <input type="text" htmlFor="image" onChange={ev => setImage(ev.target.value)} required/>
 
-                        <button type="submit" className="btn">Agregar</button>
+                        <button type="submit" className="btnAdmin">Agregar</button>
                     </form>
                     <h4>Categorías disponibles:</h4>
-                    <ul>
+                    <ul className="adminList">
                         <li>CuidadoPersonal</li>
                         <li>Suplementos</li>
                         <li>Yoga</li>
@@ -85,7 +85,7 @@ function Admin() {
                     <input type="text" htmlFor="name" onChange={ev => setName(ev.target.value)} />
                     <label htmlFor="password">Contraseña</label>
                     <input type="password" htmlFor="password" onChange={ev => setPassword(ev.target.value)} />
-                    <button type="submit" className="btn">Ingresar</button>
+                    <button type="submit" className="btnAdmin">Ingresar</button>
                 </form>
                 }
         </>

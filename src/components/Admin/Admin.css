@@ -1,11 +1,11 @@
-h3, h4, ul {
+h3, h4, .adminList {
     text-align: center;
 }
-ul {
+.adminList {
     margin-bottom: 5rem;
 }
 
-.btn {
+.btnAdmin {
     padding: .7rem;
     background-color: transparent;
     border:solid .15rem #553a2b;
@@ -16,7 +16,7 @@ ul {
     transition: background-color .2s, color .2s;
     cursor: pointer;
 }
-.btn:hover {
+.btnAdmin:hover {
     background-color: #553a2b;
     color: #fff;
 }
