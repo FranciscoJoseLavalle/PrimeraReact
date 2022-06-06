@@ -2,6 +2,7 @@ import './Cart.css';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getFirestore, collection, getDocs, query, where, addDoc, writeBatch, documentId } from 'firebase/firestore';
+import Loader from '../Loader/Loader';
 import { CartContext } from '../../context/CartContext';
 import CartItem from '../CartItem/CartItem';
 
@@ -14,6 +15,9 @@ function Cart() {
         phone: ''
     })
 
+    const [userId, setUserId] = useState('');
+    const [loading, setLoading] = useState(false)
+
     function handleInputChange(event) {
         setData({
             ...data,
@@ -22,6 +26,7 @@ function Cart() {
     }
 
     async function sendOrder(e) {
+        setLoading(true)
         e.preventDefault();
         let order = {};
 
@@ -40,21 +45,23 @@ function Cart() {
         const queryCollectionStock = collection(db, 'items');
         const queryUpdateStock = query(
             queryCollectionStock,
-            where( documentId(), 'in', cartList.map(it => it.id) ))
-        
+            where(documentId(), 'in', cartList.map(it => it.id)))
+
         const batch = writeBatch(db)
 
         await getDocs(queryUpdateStock)
-        .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
-            stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad })))
+            .then(resp => resp.docs.forEach(res => batch.update(res.ref, {
+                stock: res.data().stock - cartList.find(item => item.id === res.id).cantidad
+            })))
 
         batch.commit();
-        
-        
+
+
         const queryCollectionOrders = collection(db, 'orders')
-        addDoc(queryCollectionOrders, order)
+        await addDoc(queryCollectionOrders, order)
+            .then(resp => setUserId(resp.id))
             .catch(err => console.log(err))
-            .finally(vaciarCarrito(),setCartStatus(false))
+            .finally(vaciarCarrito(), setCartStatus(false), setLoading(false))
     }
 
     if (!productosTotales) {
@@ -62,9 +69,19 @@ function Cart() {
             <div className='carrito'>
                 <h2>Carrito</h2>
                 {cartStatus ?
-                <p>Carrito vacío... ¿Deseas volver al inicio?</p>
-                :
-                <p>¡Compra finalizada! ¿Deseas volver al inicio?</p>}
+                    <p>Carrito vacío... ¿Deseas volver al inicio?</p>
+                    :
+
+                    loading ?
+                        <Loader />
+                        :
+                        <div>
+                            <p>¡Compra finalizada!</p>
+                            <p>Tu ID de compra es: {userId}</p>
+                            <p>¿Deseas volver al inicio?</p>
+                        </div>
+
+                }
                 <Link className='inicioBtn' to="/PrimeraReact/">
                     <button className='inicio'>Volver al inicio</button>
                 </Link>

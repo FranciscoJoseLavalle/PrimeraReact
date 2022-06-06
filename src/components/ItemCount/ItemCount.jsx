@@ -10,18 +10,6 @@ function ItemCount({ productos, countModified }) {
     const [stockActual, setStockActual] = useState(false);
     const { addToCart, cartList } = useContext(CartContext);
 
-    // useEffect(() => {
-    //     const db = getFirestore();
-    //     const queryCollection = collection(db, 'items');
-    //     const queryCollectionFilter = query(queryCollection, where(documentId(), 'in', ))
-    //     getDocs(queryCollectionFilter)
-    //         .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
-    //         .finally(() => setStockActual(true))
-    // }, [])
-
-
-    console.log(productos.stock)
-
     useEffect(() => {
         if (newCartList.length !== 0) {
             if (newCartList[0].cantidad === productos.stock || productos.stock === 0) {
