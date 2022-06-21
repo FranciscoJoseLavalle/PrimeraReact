@@ -1,11 +1,13 @@
-import Cart from '../../assets/images/cart.png';
+import { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom';
-import { useContext, useState, useEffect } from 'react'
+
 import { CartContext } from '../../context/CartContext';
+import Cart from '../../assets/images/cart.png';
+
 import './CartWidget.css';
 
 function CartWidget() {
-    const { cartList, setProductosTotales, productosTotales, actualizarCarrito } = useContext(CartContext);
+    const { cartList, productosTotales, actualizarCarrito } = useContext(CartContext);
 
     useEffect(() => {
         actualizarCarrito();

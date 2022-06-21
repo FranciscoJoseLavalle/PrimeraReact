@@ -12,7 +12,7 @@ import './ItemListContainer.css';
 function ItemListContainer() {
     const [productos, setProductos] = useState([]);
     const [loading, setLoading] = useState(true);
-    const { actualizarCarrito } = useContext(CartContext);
+    const { setCartStatus } = useContext(CartContext);
 
     const { id } = useParams();
 
@@ -23,7 +23,7 @@ function ItemListContainer() {
         const queryCollectionFilter = id ? query(queryCollection, where('categoria', '==', id)) : queryCollection
         getDocs(queryCollectionFilter)
             .then(resp => setProductos(resp.docs.map(item => ({ id: item.id, ...item.data() }))))
-            .finally(() => setLoading(false))
+            .finally(() => setLoading(false), setCartStatus(true))
     }, [id])
 
     function filtrado() {

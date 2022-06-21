@@ -1,13 +1,16 @@
-import './Cart.css';
 import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getFirestore, collection, getDocs, query, where, addDoc, writeBatch, documentId } from 'firebase/firestore';
-import Loader from '../Loader/Loader';
+
 import { CartContext } from '../../context/CartContext';
+import Loader from '../Loader/Loader';
 import CartItem from '../CartItem/CartItem';
+import OrderForm from '../OrderForm/OrderForm';
+
+import './Cart.css';
 
 function Cart() {
-    const { cartList, vaciarCarrito, disminuirCantidad, aumentarCantidad, precioTotal, setPrecioTotal, setProductosTotales, productosTotales, borrar, cartStatus, setCartStatus, actualizarCarrito } = useContext(CartContext);
+    const { cartList, vaciarCarrito, disminuirCantidad, aumentarCantidad, precioTotal, productosTotales, borrar, cartStatus, setCartStatus } = useContext(CartContext);
 
     const [data, setData] = useState({
         name: '',
@@ -91,21 +94,7 @@ function Cart() {
         return (
             <div className='carrito'>
                 <h2>Carrito</h2>
-                <form onSubmit={(e) => sendOrder(e)}>
-                    <div className='inputDiv'>
-                        <label htmlFor="name">Nombre</label>
-                        <input type="text" htmlFor="name" id='name' placeholder='Nombre*' name='name' onChange={handleInputChange} required />
-                    </div>
-                    <div className='inputDiv'>
-                        <label htmlFor="email">Email</label>
-                        <input type="email" htmlFor="email" id='email' placeholder='Email*' name='email' onChange={handleInputChange} required />
-                    </div>
-                    <div className='inputDiv'>
-                        <label htmlFor="phone">Teléfono</label>
-                        <input type="number" htmlFor="phone" id='phone' placeholder='Teléfono*' name='phone' onChange={handleInputChange} required />
-                    </div>
-                    <button type='submit' className='comprar'>Comprar</button>
-                </form>
+                <OrderForm handleInputChange={handleInputChange} sendOrder={sendOrder}/>
                 <div className='productosCont'>
                     {cartList.map(producto => <CartItem
                         key={producto.id}

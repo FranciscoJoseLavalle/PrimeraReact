@@ -1,14 +1,13 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
+import CartContextProvider from './context/CartContext';
+import NavBar from './components/NavBar/NavBar';
+import Cart from './components/Cart/Cart';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Cart from './components/Cart/Cart';
-import NavBar from './components/NavBar/NavBar';
-import Contacto from './components/Contacto/Contacto';
-import CartContextProvider from './context/CartContext';
+import Admin from './components/Admin/Admin';
 
 import './App.css';
-import Admin from './components/Admin/Admin';
 
 function App() {
 

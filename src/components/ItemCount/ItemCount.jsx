@@ -1,4 +1,3 @@
-import { documentId } from 'firebase/firestore';
 import React, { useState, useContext, useEffect } from 'react';
 
 import { CartContext } from '../../context/CartContext';

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { getFirestore, collection, getDocs, query, where, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
 
+import AdminForm from "../AdminForm/AdminForm";
 import './Admin.css';
 
 
@@ -46,30 +47,10 @@ function Admin() {
 
         <>
             <h2>Admin</h2>
-            { login ?
+            {login ?
                 <>
+                    <AdminForm addNewProduct={addNewProduct} setProductName={setProductName} setPluralName={setPluralName} setCategory={setCategory} setPrice={setPrice} setStock={setStock} setImage={setImage} />
                     <h3>Agregar productos</h3>
-                    <form onSubmit={(e) => addNewProduct(e)} className="form">
-                        <label htmlFor="productName">Nombre</label>
-                        <input type="text" htmlFor="productName" onChange={ev => setProductName(ev.target.value)} required/>
-
-                        <label htmlFor="productNameInPlural">Nombre en plural</label>
-                        <input type="text" htmlFor="productNameInPlural" onChange={ev => setPluralName(ev.target.value)} required/>
-
-                        <label htmlFor="category">Categoría</label>
-                        <input type="text" htmlFor="category" onChange={ev => setCategory(ev.target.value)} required/>
-
-                        <label htmlFor="price">Precio</label>
-                        <input type="text" htmlFor="price" onChange={ev => setPrice(ev.target.value)} required/>
-                        
-                        <label htmlFor="stock">Stock</label>
-                        <input type="text" htmlFor="stock" onChange={ev => setStock(ev.target.value)} required/>
-                        
-                        <label htmlFor="image">Imagen URL</label>
-                        <input type="text" htmlFor="image" onChange={ev => setImage(ev.target.value)} required/>
-
-                        <button type="submit" className="btnAdmin">Agregar</button>
-                    </form>
                     <h4>Categorías disponibles:</h4>
                     <ul className="adminList">
                         <li>CuidadoPersonal</li>
@@ -87,7 +68,7 @@ function Admin() {
                     <input type="password" htmlFor="password" onChange={ev => setPassword(ev.target.value)} />
                     <button type="submit" className="btnAdmin">Ingresar</button>
                 </form>
-                }
+            }
         </>
     )
 }
