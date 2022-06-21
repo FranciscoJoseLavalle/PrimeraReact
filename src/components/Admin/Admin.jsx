@@ -62,10 +62,13 @@ function Admin() {
                 :
 
                 <form onSubmit={(e) => signIn(e)}>
-                    <label htmlFor="name">Usuario</label>
-                    <input type="text" htmlFor="name" onChange={ev => setName(ev.target.value)} />
-                    <label htmlFor="password">Contraseña</label>
-                    <input type="password" htmlFor="password" onChange={ev => setPassword(ev.target.value)} />
+                    <div>
+                        <label htmlFor="name">Usuario</label>
+                        <input type="text" placeholder="Usuario" htmlFor="name" onChange={ev => setName(ev.target.value)} /></div>
+                    <div>
+                        <label htmlFor="password">Contraseña</label>
+                        <input type="password" placeholder="Contraseña" htmlFor="password" onChange={ev => setPassword(ev.target.value)} />
+                    </div>
                     <button type="submit" className="btnAdmin">Ingresar</button>
                 </form>
             }

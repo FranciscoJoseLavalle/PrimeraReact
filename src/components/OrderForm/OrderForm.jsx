@@ -1,3 +1,5 @@
+import "./OrderForm.css";
+
 function OrderForm({handleInputChange, sendOrder }) {
     return (
         <form onSubmit={(e) => sendOrder(e)}>
